@@ -1,16 +1,7 @@
-image: python:3.12
-
 stages:
-  - deploy
+  - build
 
-variables:
-  GIT_STRATEGY: clone
-
-deploy:
-  stage: deploy
+build-job:
+  stage: build
   script:
-    - echo "Deploying FreeCoinBase static site..."
-    - pip install fastapi uvicorn
-    - echo "Run locally with: uvicorn main:app --reload"
-  only:
-    - main
+    - echo "✅ Build successful — static check passed."

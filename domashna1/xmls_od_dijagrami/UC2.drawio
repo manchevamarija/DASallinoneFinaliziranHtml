@@ -1,0 +1,106 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.1.1">
+  <diagram name="Page-1" id="9ei1zERB2WVz5C7aW5p7">
+    <mxGraphModel dx="1040" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Анализа на листата на криптовалути" vertex="1">
+          <mxGeometry height="40" width="248" x="324" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Проверка за целосни податоци" vertex="1">
+          <mxGeometry height="42" width="260" x="628" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Отстранува валути со недостапни или непотполни податоци" vertex="1">
+          <mxGeometry height="49" width="260" x="628" y="305.5" as="geometry" />
+        </mxCell>
+        <mxCell id="13" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Создавање на финална валидирана листа" vertex="1">
+          <mxGeometry height="40" width="248" x="324" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="15" edge="1" parent="1" source="3" style="curved=1;startArrow=none;endArrow=block;exitX=0;exitY=0.5;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitDx=0;exitDy=0;" target="C8Ihe_-rw-W5UnInzUG6-26" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="138" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" edge="1" parent="1" source="3" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="C8Ihe_-rw-W5UnInzUG6-27" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="448" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="17" edge="1" parent="1" source="3" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitDx=0;exitDy=0;" target="9" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="758" y="264" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="21" edge="1" parent="1" source="C8Ihe_-rw-W5UnInzUG6-26" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" target="C8Ihe_-rw-W5UnInzUG6-31" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="138" y="334" as="sourcePoint" />
+            <mxPoint x="138" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="23" edge="1" parent="1" source="9" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="12" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="24" edge="1" parent="1" source="C8Ihe_-rw-W5UnInzUG6-31" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitDx=0;exitDy=0;" target="13" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="138" y="502" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="25" edge="1" parent="1" source="C8Ihe_-rw-W5UnInzUG6-30" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitDx=0;exitDy=0;" target="13" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="448" y="490" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="26" edge="1" parent="1" source="12" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="13" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C8Ihe_-rw-W5UnInzUG6-26" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Проверка за дупликати" vertex="1">
+          <mxGeometry height="40" width="232" x="22" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="C8Ihe_-rw-W5UnInzUG6-28" edge="1" parent="1" source="C8Ihe_-rw-W5UnInzUG6-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="C8Ihe_-rw-W5UnInzUG6-30" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="448" y="412" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C8Ihe_-rw-W5UnInzUG6-27" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Проверка на ликвидност" vertex="1">
+          <mxGeometry height="40" width="243" x="326.5" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="C8Ihe_-rw-W5UnInzUG6-30" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Отстранува нисколиквидни валути" vertex="1">
+          <mxGeometry height="40" width="246" x="325" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="C8Ihe_-rw-W5UnInzUG6-31" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Отстранува дупликати по симбол или ID" vertex="1">
+          <mxGeometry height="38" width="240" x="18" y="311" as="geometry" />
+        </mxCell>
+        <mxCell id="C8Ihe_-rw-W5UnInzUG6-33" parent="1" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="433" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="C8Ihe_-rw-W5UnInzUG6-34" edge="1" parent="1" source="C8Ihe_-rw-W5UnInzUG6-33" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="448" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C8Ihe_-rw-W5UnInzUG6-35" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="433" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="C8Ihe_-rw-W5UnInzUG6-36" edge="1" parent="1" source="13" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" target="C8Ihe_-rw-W5UnInzUG6-35" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="660" y="660" as="sourcePoint" />
+            <mxPoint x="660" y="728" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

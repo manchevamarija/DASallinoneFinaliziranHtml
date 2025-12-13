@@ -1,0 +1,48 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.1.1">
+  <diagram name="Page-1" id="7WloTv7NoZKNXv4Apu5e">
+    <mxGraphModel dx="1042" dy="1627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" value="Администратор" vertex="1">
+          <mxGeometry height="406" width="150" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" value="Систем" vertex="1">
+          <mxGeometry height="406" width="150" x="440" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" value="Крипто берза" vertex="1">
+          <mxGeometry height="406" width="150" x="880" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="5" edge="1" parent="1" source="2" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="3" value="Иницира процес на преземање на листа на топ 1000 криптовалути">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="366" y="109" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6" edge="1" parent="1" source="3" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;" target="4" value="Испраќа барање за топ криптовалути">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="904" y="163" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7" edge="1" parent="1" source="4" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;dashPattern=2 3;endArrow=block;" target="3" value="Враќа листа со податоци за највредните 1000 криптовалути">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="907" y="217" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8" edge="1" parent="1" source="3" style="curved=1;endArrow=block;" target="3" value="Складира листата како raw во pipeline процесот">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="691" y="271" />
+              <mxPoint x="691" y="301" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,11 +1,9 @@
-from fastapi import FastAPI
-
-app = FastAPI()
-
+import os
 import sqlite3
 
 def init_db():
-    conn = sqlite3.connect("crypto.db")
+    db_path = os.path.join(os.path.dirname(__file__), "crypto.db")
+    conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS coins (
@@ -20,7 +18,3 @@ def init_db():
     conn.close()
 
 init_db()
-
-@app.get("/")
-def read_root():
-    return {"message": "FastAPI is running successfully!"}

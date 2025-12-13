@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Графици | FreeCoinBase</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #111;
+        }
+header.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0px;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+}
+
+header.navbar .logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  color: #000;
+}
+
+header.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+header.navbar nav a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+header.navbar nav a:hover {
+  color: #555;
+}
+
+.home-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+        .charts {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .charts h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            font-size: 1.2rem;
+            color: #0b592a;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .chart-controls {
+            margin: 1.5rem 0;
+        }
+
+        .chart-controls p {
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            background-color: #0b592a;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.4rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #09491f;
+        }
+
+        canvas {
+            margin-top: 1.5rem;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        footer {
+            background: #f5f5f5;
+            padding: 3rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0b592a;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #0b592a;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #063a1b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">FreeCoinBase</div>
+        <div style="margin-top: 40px;"></div>
+
+    <nav>
+        <a href="/cryptos">База</a>
+        <a href="/za-nas">За Нас</a>
+        <a href="/grafici" class="active">Графици</a>
+    <a href="/"><img src="/static/img/home-icon.png" alt="Home" class="home-icon">Почетна</a>
+    </nav>
+</header>
+
+
+<section class="charts">
+    <h1>Топ 10 Криптовалути по Market Cap</h1>
+    <p id="topCoin" class="highlight"></p>
+
+    <div class="chart-controls">
+        <p><strong>Вкупен Market Cap:</strong> <span id="totalCap"></span> USD</p>
+        <button id="toggleType" class="btn">Промени график</button>
+    </div>
+
+    <canvas id="cryptoChart" width="900" height="400"></canvas>
+</section>
+
+<footer>
+  <div class="footer-logo">FreeCoinBase</div>
+  <div class="footer-links">
+    <a href="/">Почетна</a>
+    <a href="/cryptos">База</a>
+    <a href="/grafici">Графици</a>
+    <a href="/za-nas">За Нас</a>
+  </div>
+  <p style="margin-top: 1rem; font-size: 0.9rem; color: #555;">
+    © 2025 FreeCoinBase — All rights reserved.
+  </p>
+</footer>
+
+<script>
+    const names = {{ names | tojson }};
+    const caps = {{ caps | tojson }};
+
+    let maxIndex = caps.indexOf(Math.max(...caps));
+    let topName = names[maxIndex];
+    let topCap = caps[maxIndex].toLocaleString();
+
+    document.getElementById("topCoin").innerHTML =
+        `<strong>Највредна криптовалута:</strong> ${topName} (${topCap} USD)`;
+
+    const total = caps.reduce((a, b) => a + b, 0);
+    document.getElementById("totalCap").textContent = total.toLocaleString();
+
+    let currentType = 'bar';
+    const ctx = document.getElementById('cryptoChart').getContext('2d');
+
+    const chart = new Chart(ctx, {
+        type: currentType,
+        data: {
+            labels: names,
+            datasets: [{
+                label: 'Market Cap (USD)',
+                data: caps,
+                backgroundColor: [
+                    '#0A572E', '#1B8A47', '#26A65B', '#55D187', '#8BE6B4',
+                    '#FFD166', '#EF476F', '#118AB2', '#073B4C', '#06D6A0'
+                ],
+                borderColor: '#fff',
+                borderWidth: 2,
+                borderRadius: 8,
+            }]
+        },
+        options: {
+            responsive: true,
+            animation: {
+                duration: 2000,
+                easing: 'easeOutElastic'
+            },
+            plugins: {
+                legend: { display: true, position: 'top' },
+                title: {
+                    display: true,
+                    text: 'Највредни криптовалути',
+                    font: { size: 20 }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let value = context.raw;
+                            let percent = ((value / total) * 100).toFixed(2);
+                            return `${context.label}: $${value.toLocaleString()} (${percent}%)`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: value => value / 1e9 + 'B $'
+                    }
+                }
+            }
+        }
+    });
+
+    document.getElementById("toggleType").onclick = () => {
+        if (currentType === 'bar') currentType = 'line';
+        else if (currentType === 'line') currentType = 'pie';
+        else currentType = 'bar';
+        chart.config.type = currentType;
+        chart.update();
+    };
+</script>
+
+</body>
+</html>

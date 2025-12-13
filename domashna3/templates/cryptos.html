@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>База на Криптовалути | FreeCoinBase</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+            background-color: #fff;
+        }
+
+header.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0px;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+}
+
+header.navbar .logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  color: #000;
+}
+
+header.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+header.navbar nav a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+header.navbar nav a:hover {
+  color: #555;
+}
+
+.home-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+
+        .crypto-hero {
+            background: url("/static/img/bg-crypto.png") center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 7rem 1rem 6rem;
+        }
+
+        .crypto-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+
+        .crypto-hero p {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .crypto-section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .crypto-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-form {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .filter-form label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .filter-form select {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        table {
+            width: 85%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 0.9rem 1rem;
+            border: 1px solid #ddd;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        .pagination {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .pagination a {
+            background-color: #0b592a;
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1rem;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .pagination a:hover {
+            background-color: #09491f;
+        }
+
+        .pagination span {
+            font-weight: 500;
+            color: #222;
+        }
+
+        footer {
+            background: #f5f5f5;
+            padding: 3rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0b592a;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #0b592a;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #063a1b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">FreeCoinBase</div>
+        <div style="margin-top: 40px;"></div>
+
+    <nav>
+        <a href="/cryptos">База</a>
+  <a href="/za-nas">За Нас</a>
+  <a href="/grafici">Графици</a>
+    <a href="/"><img src="/static/img/home-icon.png" alt="Home" class="home-icon">Почетна</a>
+    </nav>
+</header>
+
+<section class="crypto-hero">
+    <h1>FREE E-COIN BASE</h1>
+    <p>Вашето #1 место за пребарување на точни податоци за најпопуларните 1000 криптовалути.</p>
+</section>
+
+<section class="crypto-section">
+    <h2>База на криптовалути</h2>
+
+    <form method="get" action="/cryptos" class="filter-form">
+        <label for="filter_id">Избери криптовалута:</label>
+        <select name="filter_id" id="filter_id" onchange="this.form.submit()">
+            <option value="">-- прикажи ги сите --</option>
+            {% for cid, cname in all_cryptos %}
+                <option value="{{ cid }}" {% if selected == cid %}selected{% endif %}>{{ cname }}</option>
+            {% endfor %}
+        </select>
+        <input type="hidden" name="page" value="{{ page }}">
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Market Cap</th>
+                <th>Rank</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for id, symbol, name, market_cap, market_cap_rank in cryptos %}
+            <tr>
+                <td>{{ id }}</td>
+                <td>{{ symbol }}</td>
+                <td>{{ name }}</td>
+                <td>{{ "{:,.0f}".format(market_cap) }}</td>
+                <td>{{ market_cap_rank }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        {% if page > 1 %}
+        <a href="/cryptos?page={{ page - 1 }}{% if selected %}&filter_id={{ selected }}{% endif %}">←</a>
+        {% endif %}
+
+        <span>Страница {{ page }} од {{ total_pages }}</span>
+
+        {% if page < total_pages %}
+        <a href="/cryptos?page={{ page + 1 }}{% if selected %}&filter_id={{ selected }}{% endif %}">→</a>
+        {% endif %}
+    </div>
+</section>
+
+<footer>
+  <div class="footer-logo">FreeCoinBase</div>
+  <div class="footer-links">
+    <a href="/">Почетна</a>
+    <a href="/cryptos">База</a>
+    <a href="/grafici">Графици</a>
+    <a href="/za-nas">За Нас</a>
+  </div>
+  <p style="margin-top: 1rem; font-size: 0.9rem; color: #555;">
+    © 2025 FreeCoinBase — All rights reserved.
+  </p>
+</footer>
+
+
+</body>
+</html>

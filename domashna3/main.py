@@ -1,30 +1,50 @@
 from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-import sqlite3
-
-
+import sqlite3, os
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="domashna3/static"), name="static")
-templates = Jinja2Templates(directory="domashna3/templates")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_DIR = os.path.join(BASE_DIR, "static")
+TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 
-DB_PATH = r"C:\Users\Marija\PycharmProjects\DASallinone\domashna1\crypto.db"
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+templates = Jinja2Templates(directory=TEMPLATES_DIR)
+
+DB_PATH = os.path.abspath(os.path.join(BASE_DIR, "../domashna1/crypto.db"))
 
 
+
+def get_connection():
+    return sqlite3.connect(DB_PATH)
 
 
 @app.get("/")
 def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
+
+
 @app.get("/cryptos")
 def show_cryptos(request: Request, filter_id: str = None, page: int = 1):
     limit = 20
     offset = (page - 1) * limit
 
-    conn = sqlite3.connect(DB_PATH)
+    conn = get_connection()
     cursor = conn.cursor()
+
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='coins';")
+    if not cursor.fetchone():
+        conn.close()
+        return templates.TemplateResponse("cryptos.html", {
+            "request": request,
+            "cryptos": [],
+            "all_cryptos": [],
+            "selected": None,
+            "page": 1,
+            "total_pages": 1,
+            "error": "Табелата 'coins' не постои во базата (Render не ја чита crypto.db)."
+        })
 
     cursor.execute("SELECT id, name FROM coins ORDER BY market_cap_rank LIMIT 200")
     all_cryptos = cursor.fetchall()
@@ -66,9 +86,10 @@ def show_cryptos(request: Request, filter_id: str = None, page: int = 1):
 def about(request: Request):
     return templates.TemplateResponse("about.html", {"request": request})
 
+
 @app.get("/grafici")
 def show_graphs(request: Request):
-    conn = sqlite3.connect(DB_PATH)
+    conn = get_connection()
     cursor = conn.cursor()
 
     cursor.execute("""

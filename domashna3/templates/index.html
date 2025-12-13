@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeCoinBase</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <style>
+        footer {
+            background: #f5f5f5;
+            padding: 3rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0b592a;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #0b592a;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #063a1b;
+        }
+
+header.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ padding: 18px 0px;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+}
+
+header.navbar .logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  color: #000;
+}
+
+header.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+header.navbar nav a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+header.navbar nav a:hover {
+  color: #555;
+}
+
+.home-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+
+    <div class="logo">FreeCoinBase</div>
+        <div style="margin-top: 40px;"></div>
+
+    <nav>
+        <a href="/cryptos">База</a>
+        <a href="/za-nas">За Нас</a>
+        <a href="/grafici">Графици</a>
+    <a href="/"><img src="/static/img/home-icon.png" alt="Home" class="home-icon">Почетна</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>FreeCoinBase</h1>
+    <p>База на OHLCV информации за топ 1000 криптовалути во последните 10 години,
+    извлечени од познати крипто берзи како Binance и CoinGecko.</p>
+    <img src="/static/img/hero-crypto.png" alt="Crypto overview" class="hero-img">
+</section>
+
+<section class="features">
+    <h2>На кој начин работиме?</h2>
+    <div class="feature-grid">
+        <div class="feature">
+            <img src="/static/img/bitcoin-icon.png" alt="Fetch coins">
+            <h3>Fetch coins</h3>
+            <p>Собираме OHLCV информации за топ криптовалутите.</p>
+        </div>
+        <div class="feature">
+            <img src="/static/img/calendar-icon.png" alt="Last date check">
+            <h3>Last date check</h3>
+            <p>Проверуваме кога последно биле преземени информации.</p>
+        </div>
+        <div class="feature">
+            <img src="/static/img/download-icon.png" alt="Fetch missing data">
+            <h3>Fetch missing data</h3>
+            <p>Ги преземаме сите нови информации.</p>
+        </div>
+    </div>
+</section>
+
+<section class="offer">
+    <h2>Што ви овозможуваме вас како корисници?</h2>
+    <p>Селектирање т.е. филтрирање на една или повеќе валути за преглед на информации.<br>
+    Подредување според цена, ликвидност и слично.<br>
+    Споредување на повеќе валути.<br>
+    И друго!</p>
+    <a href="/cryptos" class="btn">Преглед на базата</a>
+</section>
+
+<section class="crypto-icons">
+    <img src="/static/img/eth.png" alt="ETH">
+    <img src="/static/img/trx.png" alt="TRX">
+    <img src="/static/img/usdt.png" alt="USDT">
+    <img src="/static/img/doge.png" alt="DOGE">
+    <img src="/static/img/ltc.png" alt="LTC">
+    <img src="/static/img/shiba.png" alt="SHIBA">
+    <img src="/static/img/xrp.png" alt="XRP">
+    <img src="/static/img/btc.png" alt="BTC">
+</section>
+
+<section class="comments">
+    <h2>Коментари <button class="add-comment">+</button></h2>
+    <div class="comment-list">
+        <div class="comment">
+            <p>“Одличен проект! Ми помогна многу со анализа на крипто пазарот.”</p>
+            <span>Игор</span><br>
+            <small>Крипто ентузијаст</small>
+        </div>
+        <div class="comment">
+            <p>“Информациите се точни и прегледни. Супер идеја!”</p>
+            <span>Марија</span><br>
+            <small>Студент по информатика</small>
+        </div>
+        <div class="comment">
+            <p>“Одлично направено, едноставно за користење и визуелно привлечно.”</p>
+            <span>Александар</span><br>
+            <small>Блокчејн истражувач</small>
+        </div>
+    </div>
+</section>
+
+<div id="commentModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Додај нов коментар</h3>
+        <form id="commentForm">
+            <input type="text" id="name" placeholder="Име" required>
+            <input type="text" id="description" placeholder="Опис" required>
+            <textarea id="text" placeholder="Вашиот коментар..." required></textarea>
+            <button type="submit">Додади</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+  <div class="footer-logo">FreeCoinBase</div>
+  <div class="footer-links">
+    <a href="/">Почетна</a>
+    <a href="/cryptos">База</a>
+    <a href="/grafici">Графици</a>
+    <a href="/za-nas">За Нас</a>
+  </div>
+  <p style="margin-top: 1rem; font-size: 0.9rem; color: #555;">
+    © 2025 FreeCoinBase — All rights reserved.
+  </p>
+</footer>
+
+
+<script>
+    const modal = document.getElementById("commentModal");
+    const btn = document.querySelector(".add-comment");
+    const span = document.querySelector(".close");
+    const form = document.getElementById("commentForm");
+    const commentList = document.querySelector(".comment-list");
+
+    btn.onclick = () => { modal.style.display = "flex"; };
+    span.onclick = () => { modal.style.display = "none"; };
+    window.onclick = (event) => { if (event.target === modal) modal.style.display = "none"; };
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const desc = document.getElementById("description").value;
+        const text = document.getElementById("text").value;
+
+        const newComment = document.createElement("div");
+        newComment.classList.add("comment");
+        newComment.innerHTML = `
+            <p>“${text}”</p>
+            <span>${name}</span><br>
+            <small>${desc}</small>
+        `;
+
+        commentList.appendChild(newComment);
+        modal.style.display = "none";
+        form.reset();
+    });
+</script>
+
+</body>
+</html>

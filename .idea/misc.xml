@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Black">
+<<<<<<< HEAD
+    <option name="sdkName" value="Python 3.13 (DASallinone)" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13 (DASallinone)" project-jdk-type="Python SDK" />
+=======
     <option name="sdkName" value="Python 3.13 (Dians)" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13 (Dians)" project-jdk-type="Python SDK" />
+>>>>>>> 1d0ece7728e87059046f025d99f499098ed004d0
 </project>

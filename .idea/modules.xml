@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/.idea/DASallinone.iml" filepath="$PROJECT_DIR$/.idea/DASallinone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/domashna_1_das-main/.idea/domashna1.iml" filepath="$PROJECT_DIR$/domashna_1_das-main/.idea/domashna1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/domashna_2_das-main/.idea/domashna_2_das-main.iml" filepath="$PROJECT_DIR$/domashna_2_das-main/.idea/domashna_2_das-main.iml" />
+=======
       <module fileurl="file://$PROJECT_DIR$/.idea/Dians.iml" filepath="$PROJECT_DIR$/.idea/Dians.iml" />
+>>>>>>> 1d0ece7728e87059046f025d99f499098ed004d0
     </modules>
   </component>
 </project>

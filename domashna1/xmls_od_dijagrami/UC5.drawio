@@ -1,0 +1,57 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.1.1">
+  <diagram name="Page-1" id="NV7otqzdymqTY9JRB89O">
+    <mxGraphModel dx="1042" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="I8IvAnJr9Mlw5PbhYKdS-32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Системот ги конвертира датумите во стандардизираниот формат &lt;code data-start=&quot;2865&quot; data-end=&quot;2877&quot;&gt;YYYY-MM-DD.&lt;/code&gt;" vertex="1">
+          <mxGeometry height="50" width="276" x="287" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="I8IvAnJr9Mlw5PbhYKdS-35" edge="1" parent="1" source="I8IvAnJr9Mlw5PbhYKdS-32" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="I8IvAnJr9Mlw5PbhYKdS-36" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="340" y="260" as="sourcePoint" />
+            <mxPoint x="426" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I8IvAnJr9Mlw5PbhYKdS-36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Сите бројчани вредности се претвораат во валидни типови (float/int)." vertex="1">
+          <mxGeometry height="50" width="275" x="288" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="I8IvAnJr9Mlw5PbhYKdS-37" edge="1" parent="1" source="I8IvAnJr9Mlw5PbhYKdS-36" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="I8IvAnJr9Mlw5PbhYKdS-38" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="440" y="310" as="sourcePoint" />
+            <mxPoint x="424" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I8IvAnJr9Mlw5PbhYKdS-38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Грешните вредности (NaN, None) се&lt;div&gt;бришат или заменуваат.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="275" x="288" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="I8IvAnJr9Mlw5PbhYKdS-40" edge="1" parent="1" source="I8IvAnJr9Mlw5PbhYKdS-38" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="I8IvAnJr9Mlw5PbhYKdS-41" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="460" y="370" as="sourcePoint" />
+            <mxPoint x="425" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I8IvAnJr9Mlw5PbhYKdS-41" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Се верификува дека структурата на записот е комплетна и конзистентна." vertex="1">
+          <mxGeometry height="50" width="275" x="288" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="I8IvAnJr9Mlw5PbhYKdS-42" parent="1" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="410" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="I8IvAnJr9Mlw5PbhYKdS-43" edge="1" parent="1" source="I8IvAnJr9Mlw5PbhYKdS-42" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="425" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I8IvAnJr9Mlw5PbhYKdS-44" edge="1" parent="1" source="I8IvAnJr9Mlw5PbhYKdS-41" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="I8IvAnJr9Mlw5PbhYKdS-45" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="450" y="470" as="sourcePoint" />
+            <mxPoint x="426" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I8IvAnJr9Mlw5PbhYKdS-45" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="410" y="480" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

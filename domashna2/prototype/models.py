@@ -9,5 +9,8 @@ class Crypto(Base):
     name = Column(String)
     market_cap = Column(Float)
     market_cap_rank = Column(Integer)
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 1d0ece7728e87059046f025d99f499098ed004d0

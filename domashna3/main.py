@@ -3,24 +3,16 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import sqlite3
 
-# ---------------- APP ----------------
 app = FastAPI()
 
-# ---------------- STATIC & TEMPLATES ----------------
 app.mount("/static", StaticFiles(directory="domashna3/static"), name="static")
 templates = Jinja2Templates(directory="domashna3/templates")
 
-# ---------------- DATABASE ----------------
-DB_PATH = r"C:\Users\Marija\PycharmProjects\DASallinone\domashna1\crypto.db"
-
-# ---------------- ROUTES ----------------
+DB_PATH = "domashna1/crypto.db"
 
 @app.get("/")
 def home(request: Request):
-    return templates.TemplateResponse(
-        "index.html",
-        {"request": request}
-    )
+    return templates.TemplateResponse("index.html", {"request": request})
 
 
 @app.get("/cryptos")
@@ -31,9 +23,7 @@ def show_cryptos(request: Request, filter_id: str = None, page: int = 1):
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
-    cursor.execute(
-        "SELECT id, name FROM coins ORDER BY market_cap_rank LIMIT 200"
-    )
+    cursor.execute("SELECT id, name FROM coins ORDER BY market_cap_rank LIMIT 200")
     all_cryptos = cursor.fetchall()
 
     if filter_id:
@@ -74,10 +64,7 @@ def show_cryptos(request: Request, filter_id: str = None, page: int = 1):
 
 @app.get("/za-nas")
 def about(request: Request):
-    return templates.TemplateResponse(
-        "about.html",
-        {"request": request}
-    )
+    return templates.TemplateResponse("about.html", {"request": request})
 
 
 @app.get("/grafici")
@@ -100,30 +87,18 @@ def show_graphs(request: Request):
 
     return templates.TemplateResponse(
         "grafici.html",
-        {
-            "request": request,
-            "names": names,
-            "caps": caps
-        }
+        {"request": request, "names": names, "caps": caps}
     )
 
 
 @app.get("/lstm")
 def lstm(request: Request):
-    dates = ["2025-01-01", "2025-01-02", "2025-01-03", "2025-01-04", "2025-01-05"]
-    true_prices = [30000, 30500, 31000, 30800, 31500]
-    predicted_prices = [29950, 30600, 30950, 30750, 31400]
-
     return templates.TemplateResponse(
         "lstm.html",
         {
             "request": request,
-            "dates": dates,
-            "true_prices": true_prices,
-            "predicted_prices": predicted_prices
+            "dates": ["2025-01-01", "2025-01-02", "2025-01-03"],
+            "true_prices": [30000, 30500, 31000],
+            "predicted_prices": [29950, 30600, 30950],
         }
     )
-
-
-if __name__ == "__main__":
-    app.run(debug=True)

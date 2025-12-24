@@ -11,7 +11,7 @@ app.mount("/static", StaticFiles(directory="domashna3/static"), name="static")
 templates = Jinja2Templates(directory="domashna3/templates")
 
 # ---------------- DATABASE ----------------
-DB_PATH = r"C:\Users\Marija\PycharmProjects\DASallinone\domashna1\crypto.db"
+DB_PATH = "domashna1/crypto.db"
 
 # ---------------- ROUTES ----------------
 

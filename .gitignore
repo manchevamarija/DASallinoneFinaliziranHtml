@@ -6,6 +6,7 @@
 __pycache__/
 *.pyc
 
+<<<<<<< HEAD
 # OS files
 .DS_Store
 Thumbs.db
@@ -21,3 +22,11 @@ Thumbs.db
 .idea/
 *.iml
 __pycache__/
+=======
+# Databases
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db
+>>>>>>> 564328ab2e953b32afbb51dbdb330f9566709e13

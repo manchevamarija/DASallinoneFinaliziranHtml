@@ -10,7 +10,11 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Databases
+# Ignore all databases
 *.db
+
+# Allow ONLY the one used in production
+!domashna3/crypto.db
+
 
 

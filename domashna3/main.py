@@ -8,7 +8,7 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="domashna3/static"), name="static")
 templates = Jinja2Templates(directory="domashna3/templates")
 
-DB_PATH = "domashna1/crypto.db"
+DB_PATH = "crypto.db"
 
 @app.get("/")
 def home(request: Request):

@@ -8,7 +8,4 @@ requests==2.32.3
 ta==0.11.0
 yfinance==0.2.50
 scikit-learn==1.5.2
-<<<<<<< HEAD
 jinja2==3.1.4
-=======
->>>>>>> 564328ab2e953b32afbb51dbdb330f9566709e13
